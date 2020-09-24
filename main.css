@@ -97,7 +97,7 @@ a.skip-main {
     top:auto;
     z-index:-999;
 }
-a.skip-main:focus, a.skip-main:active {
+a.skip-main:focus{
     
     left: auto;
     top: auto;
