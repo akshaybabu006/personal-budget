@@ -14,27 +14,27 @@
     <link rel="stylesheet" href="/pb/main.css">
 </head>
 <body>
-    <a href="#main">Skip to main content</a>
+    <a class="skip-main" href="#main">Skip to main content</a>
     <!-- This is a Semantic HTML Change -->
-    <nav class="menu">
+    <nav class="menu" role="navigation">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/pb/about.html">About</a></li>
-            <li><a href="/pb/login.html">Login</a></li>
+            <li><a href="/pb/about.html" aria-label="About the site">About</a></li>
+            <li><a href="/pb/login.html" aria-label="Login the site">Login</a></li>
             <!-- This is an SEO Change -->
             <li><a href="https://google.com" rel="canonical">Google</a></li>
         </ul>
     </nav>
 
     <!-- This is a Semantic HTML Change -->
-    <header class="hero">
+    <header class="hero" role="banner">
         <h1>Personal Budget</h1>
         <h2>A personal-budget management app</h2>
     </header>
 
-    <main class="container center">
+    <main  role="main" class="container center">
 
-        <div class="page-area">
+        <div id = "main" class="page-area">
             <!-- This is a Semantic HTML Change -->
             <section class="text-box">
                 <h1>Stay on track </h1>
