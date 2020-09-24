@@ -101,6 +101,7 @@ a.skip-main:focus, a.skip-main:active {
     
     left: auto;
     top: auto;
+    position: relative;
     
 }
 
