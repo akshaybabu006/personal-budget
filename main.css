@@ -63,7 +63,7 @@ header.hero h2 {
     color: #4d5791;
 }
 
-.container {
+main.container {
     padding: 40px;
     width: 100%;
 }
@@ -83,7 +83,7 @@ header.hero h2 {
     text-align: center;
 }
 
-.container section.text-box {
+main.container section.text-box {
     display: inline-block;
     width: 100%;
     max-width: 340px;
