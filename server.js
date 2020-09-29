@@ -26,7 +26,9 @@ app.get('/hello',(req, res)=> {
 });
 
 app.get('/budget', (req, res) => {
-    res.json(budget);
+    //res.json(budget);
+    //res.send('data.json');
+    res.sendFile(__dirname + '/data.json');
 });
 
 app.listen(port, () => {
