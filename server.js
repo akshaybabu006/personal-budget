@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 3000;
-
-app.use('/', express.static('public'));
+//Budget API
+// app.use('/', express.static('public'));
+app.use(cors());
 
 const budget = {
     myBudget: [
@@ -21,9 +23,9 @@ const budget = {
 
 ]};
 
-app.get('/hello',(req, res)=> {
-    res.send('Hello world !');
-});
+// app.get('/hello',(req, res)=> {
+//     res.send('Hello world !');
+// });
 
 app.get('/budget', (req, res) => {
     //res.json(budget);
@@ -34,5 +36,5 @@ app.get('/budget', (req, res) => {
 app.listen(port, () => {
     console.log(`Serving at http://localhost:${port}`)
 
-    console.log(`app listening at http://localhost:${port}`)
+    console.log(`API listening at http://localhost:${port}`)
 })
