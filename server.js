@@ -2,39 +2,21 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 3000;
-//Budget API
-// app.use('/', express.static('public'));
+const routes = require("./routes")
+
+const mongoose = require("mongoose")
+let url = 'mongodb://localhost:27017/BudgetDB';
 app.use(cors());
 
-const budget = {
-    myBudget: [
-    {
-        title: 'Eat out',
-        budget:20
-    },
-    {
-        title: 'Rent',
-        budget:310
-    },
-    {
-        title: 'Groceries',
-        budget:110
-    },
+mongoose
+	.connect(url, { useNewUrlParser: true,  useUnifiedTopology: true  })
+	.then(() => {
+        app.use(express.json())
+        app.use("/api", routes)
+        app.listen(port, () => {
+            console.log(`Serving at http://localhost:${port}`)
+        
+            console.log(`API listening at http://localhost:${port}`)
+        })
+	})
 
-]};
-
-// app.get('/hello',(req, res)=> {
-//     res.send('Hello world !');
-// });
-
-app.get('/budget', (req, res) => {
-    //res.json(budget);
-    //res.send('data.json');
-    res.sendFile(__dirname + '/data.json');
-});
-
-app.listen(port, () => {
-    console.log(`Serving at http://localhost:${port}`)
-
-    console.log(`API listening at http://localhost:${port}`)
-})
